@@ -11,8 +11,9 @@ function computerPlay() {
 		return "scissors";
 	}
 }
-function playRound(computerSelection, playerSelection){
+function playRound(playerSelection,computerSelection){
 	playerSelection = playerSelection.toLowerCase();
+	//conditions for draw
 	if (playerSelection == "rock" && computerSelection == "rock") {
 		return "Yay! It is a draw! Rock Vs Rock";
 	}
@@ -22,24 +23,22 @@ function playRound(computerSelection, playerSelection){
 	else if (playerSelection == "scissors" && computerSelection == "scissors") {
 		return "Yay! It is a draw! Scissors Vs Scissors";
 	}
-	//Player wins section
 	else if (playerSelection == "rock" && computerSelection == "scissors") {
 		return "Yaay you win: Rock smashes scissors: Rock Vs Scissors";
-	}
-	else if (playerSelection == "scissors" && computerSelection == "paper") {
-		return "Yaaay you win: Scissors beat Paper: Scissors Vs Paper";
-	}
-	else if (playerSelection == "paper" && computerSelection == "rock") {
-		return "Yaaay you win: Paper wraps rock: Paper Vs Rock";
-	}
-	//computer wins section
-	else if (playerSelection == "paper" && computerSelection == "scissors") {
-		return "Computer Wins: Scissors beat Paper: Paper Vs Scissors";
 	}
 	else if (playerSelection == "scissors" && computerSelection == "rock") {
 		return "Computer Wins: Rock smashes scissors: Scissors Vs Rock";
 	}
-	else if (playerSelection == "rock" && computerSelection == "paper") {
+	else if (playerSelection == "scissors" && computerSelection == "paper") {
+		return "Yaaay you win: Scissors beat Paper: Scissors Vs Paper";
+	}
+	else if (playerSelection == "paper" && computerSelection == "scissors") {
+		return "Computer Wins: Scissors beat Paper: Paper Vs Scissors";
+	}
+	else if (playerSelection == "paper" && computerSelection == "rock") {
+		return "Yaaay you win: Paper wraps rock: Paper Vs Rock";
+	}
+	else{
 		return "Computer Wins: Paper wraps Rock.Rock Vs Paper";
 	}
 };
